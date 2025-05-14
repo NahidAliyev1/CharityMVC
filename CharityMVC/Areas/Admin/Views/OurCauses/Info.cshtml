@@ -1,0 +1,49 @@
+﻿@using CharityMVC.Models
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, AuthoringTagHelpers
+@model OurCauses
+<!-- Table Start -->
+<div class="container-fluid pt-4 px-4">
+    <div class="row g-4">
+        <div class="col-sm-12 col-xl-12">
+            <div class="bg-secondary rounded h-100 p-4">
+                <h6 class="mb-4">Our Causes</h6>
+                <a asp-area="Admin" asp-controller="OurCauses" asp-action="Create">Create</a>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Image</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">RaisedPrice</th>
+                            <th scope="col">GoalPrice</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                            <tr>
+
+                                <td>
+                                <img src="~/assets/uploadedImages/@Model.ImgPath" alt="Image" />
+                                </td>
+                                <td>@Model.Name</td>
+                                <td>@Model.ShortDescription</td>
+                                <td>@Model.RaisedPrice</td>
+                                <td>@Model.GoalPrice</td>
+                                <td>
+                                    <a asp-area="Admin" asp-controller="Ourcauses" asp-action="Info" asp-route-id="@Model.Id" class="btn btn-info m-2">Info</a>
+                                    <a asp-area="Admin" asp-controller="Ourcauses" asp-action="Create" asp-route-id="@Model.Id" class="btn btn-warning m-2">Update</a>
+                                    <a asp-area="Admin" asp-controller="Ourcauses" asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger m-2">Delete</a>
+                                </td>
+                            </tr>
+                        
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- Table End -->
